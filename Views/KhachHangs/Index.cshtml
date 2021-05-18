@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Quanlybanhang.Models.KhachHang>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLTE3.cshtml";
+}
+<h1 style="text-align:center;color:chocolate">Hiển Thị Khách Hàng</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-danger" style="margin-left:80%">Tạo Mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HoTenKh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiachiKh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DienThoai)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTenKh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiachiKh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DienThoai)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaKh">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaKh">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaKh">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

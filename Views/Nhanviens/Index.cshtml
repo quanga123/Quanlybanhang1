@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Quanlybanhang.Models.Nhanvien>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLTE3.cshtml";
+}
+
+<h1 style="text-align:center;color:chocolate">Hiển Thị Nhân Viên</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-danger" style="margin-left:80%">Create New</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                Họ Tên Nhân Viên
+            </th>
+            <th>
+                Giới Tính 
+            </th>
+            <th>
+                Ngày Sinh
+            </th>
+            <th>
+                Địa Chỉ
+            </th>
+            <th>
+                Số Điện Thoại
+            </th>
+            <th>Thao Tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoTenNv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GioiTinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgaySinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DienThoai)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MaNv">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.MaNv">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.MaNv">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,43 @@
+﻿@model Quanlybanhang.Models.HoaDon
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/AdminLTE3.cshtml";
+}
+
+<h1 style="text-align:center;color:chocolate">Xem Chi Tiết Hóa Đơn</h1>
+
+<div>
+    <h4>HoaDon</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+           Ngày Lập hóa đơn
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NgayLapHd)
+        </dd>
+        <dt class = "col-sm-2">
+            Ngày nhận hàng 
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NganNhanHang)
+        </dd>
+        <dt class = "col-sm-2">
+            Mã Khách Hàng
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaKhNavigation.MaKh)
+        </dd>
+        <dt class = "col-sm-2">
+            Mã Nhân Viên
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaNvNavigation.MaNv)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MaHd">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

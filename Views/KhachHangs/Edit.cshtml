@@ -1,0 +1,41 @@
+﻿@model Quanlybanhang.Models.KhachHang
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/AdminLTE3.cshtml";
+}
+
+
+<h1 style="text-align:center;color:chocolate">Sửa Thông Tin Khách Hàng</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaKh" />
+            <div class="form-group">
+                <label asp-for="HoTenKh" class="control-label">Họ Và Tên Khách Hàng</label>
+                <input asp-for="HoTenKh" class="form-control" />
+                <span asp-validation-for="HoTenKh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiachiKh" class="control-label">Địa Chỉ Khách Hàng</label>
+                <input asp-for="DiachiKh" class="form-control" />
+                <span asp-validation-for="DiachiKh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DienThoai" class="control-label">Số Điện Thoại</label>
+                <input asp-for="DienThoai" class="form-control" />
+                <span asp-validation-for="DienThoai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

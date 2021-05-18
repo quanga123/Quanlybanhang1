@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Quanlybanhang.Models.HoaDon>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLTE3.cshtml";
+}
+
+<h1 style="text-align:center;color:chocolate">Thông Tin Hóa Đơn</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Ngày Lập Hóa Đơn
+            </th>
+            <th>
+               Ngày Nhận Hàng
+            </th>
+            <th>
+                Mã Khách Hàng
+            </th>
+            <th>
+                Mã Nhân Viên
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayLapHd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NganNhanHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKhNavigation.MaKh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaNvNavigation.MaNv)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaHd">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaHd">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaHd">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

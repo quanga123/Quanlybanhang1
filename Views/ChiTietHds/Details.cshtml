@@ -1,0 +1,37 @@
+﻿@model Quanlybanhang.Models.ChiTietHd
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/AdminLTE3.cshtml";
+}
+
+<h1 style="text-align:center;color:chocolate">Thông Tin Chi Tiết Hóa Đơn</h1>
+
+<div>
+    <h4>ChiTietHd</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Số Lượng
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+        <dt class = "col-sm-2">
+            Mã Hóa Đơn
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaHdNavigation.MaKh)
+        </dd>
+        <dt class = "col-sm-2">
+            Mã Sản Phẩm
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaSpNavigation.MaSp)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdchitietHd">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

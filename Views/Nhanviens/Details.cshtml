@@ -1,0 +1,49 @@
+﻿@model Quanlybanhang.Models.Nhanvien
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/AdminLTE3.cshtml";
+}
+
+<h1 style="text-align:center;color:chocolate">Hiển Thị Chi tiết thông tin Nhân Viên</h1>
+
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Họ Tên Nhân Viên
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HoTenNv)
+        </dd>
+        <dt class="col-sm-2">
+            Giới Tính
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GioiTinh)
+        </dd>
+        <dt class="col-sm-2">
+            Sinh Nhật
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+        <dt class="col-sm-2">
+            Địa Chỉ 
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+        <dt class="col-sm-2">
+            Số Điện Thoại
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DienThoai)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MaNv">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
